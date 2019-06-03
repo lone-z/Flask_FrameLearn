@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户注册</title>
+</head>
+<body>
+<div>
+    <form action="" method="post">
+        用户名：<input type="text" name="user">
+        <br>
+        密码：<input type="password" name="pwd">
+        <br>
+        确认密码：<input type="password" name="pwd2">
+        <br>
+        <button type="submit" name="log">登陆</button>
+        <button type="submit" name="reg">注册</button>
+    </form>
+    {% for m in get_flashed_messages() %}
+    <script>alert('{{ m }}')</script>
+    {% endfor %}
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>书籍修改</title>
+</head>
+<body>
+    {% for mes in get_flashed_messages() %}
+        <script>alert('{{ mes }}')</script>
+    {% endfor %}
+    <form action="" method="post">
+        书籍：<input type="text" name="book" value="{{ data.book_info.name }}">
+        <button type="submit" id="bok">确认修改</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>作者修改</title>
+</head>
+<body>
+    {% for mes in get_flashed_messages() %}
+        <script>alert('{{ mes }}')</script>
+    {% endfor %}
+    <form action="" method="post">
+        作者：<input type="text" name="author" value="{{ data.author_info.name }}">
+        <button type="submit" id="aut">确认修改</button>
+    </form>
+</body>
+</html>

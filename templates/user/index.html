@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页（商品列表）</title>
+</head>
+<body>
+    {% for mes in get_flashed_messages() %}
+        <script>alert('{{ mes }}')</script>
+    {% endfor %}
+    <br>
+    {% for a in data.author_list %}
+    <hr>
+        {{ a.name }}
+    <br>
+        <table border="1">
+            <tr></tr>
+{#             修改原始数据，控制作者名下书籍的数量（前台方法） #}
+{#            {% for b in a.books.limit(2) %}#}
+            {% for b in a.books %}
+                    <tr>
+                    <td>{{ loop.index }}</td>
+                    <td><a href="/detail/{{ b.id }}">{{ b.name }}</a></td>
+                    <td>{{ b.price }}</td>
+                    <td><a href="/add_cart/{{ b.id }}">添加购物车</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>用户登陆</title>
+</head>
+<body>
+<div>
+    <form action="" method="post">
+        用户名：<input type="text" name="user">
+        <br>
+        密码：<input type="password" name="pwd">
+        <br>
+        <a href="register">注册</a>
+        <button type="submit" name="log">登陆</button>
+    </form>
+    {% for l in get_flashed_messages() %}
+        <h4>{{ l }}</h4>
+    {% endfor %}
+</div>
+</body>
+</html>

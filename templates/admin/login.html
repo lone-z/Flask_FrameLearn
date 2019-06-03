@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登陆</title>
+</head>
+<body>
+    <form action="" method="post">
+        账户：<input type="text" name="name">
+        <br>
+        密码：<input type="password" name="pwd">
+        <br>
+        <button type="submit" name="log">登陆</button>
+        <button type="submit" name="res">注册</button>
+    <br>
+        {% for mes in get_flashed_messages() %}
+            <script>alert('{{ mes }}')</script>
+        {% endfor %}
+    </form>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>商品详情</title>
+</head>
+<body>
+作者：{{ data.book_info.author.name }}
+<br>
+图书：{{ data.book_info.name }}
+<br>
+价格：{{ data.book_info.price }}
+<br>
+描述：{{ data.book_info.miaoshu }}
+<br>
+<a href="/add_cart/{{ data.book_info.id }}">添加到购物车</a>
+</body>
+</html>

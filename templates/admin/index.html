@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>管理员首页</title>
+</head>
+<body>
+    <div>
+       <form action="" method="post">
+            作者：<input type="text" name="author">
+            <br>
+            书籍：<input type="text" name="book">
+            <br>
+            <button type="submit" name="add">添加</button>
+       </form>
+        {% for m in get_flashed_messages() %}
+            {{ m }}
+        {% endfor %}
+    </div>
+    <div>
+    {% for a in data.a_list %}
+        <hr>
+        作者：{{ a.name }}
+        <a href="/admin/change_author/{{ a.id }}">修改</a>
+        <a href="/admin/del_author/{{ a.id }}">删除</a>
+        <br>
+        <table border="1">
+            <tr>
+                <td>序号</td>
+                <td>书籍名称</td>
+                <td>价格</td>
+                <td></td>
+            </tr>
+            {% for b in a.books %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ b.name }}</td>
+                <td>{{ b.price }}</td>
+                <td>
+                    <a href="/admin/change_book/{{ b.id }}">修改</a>
+                    <a href="/admin/del_book/{{ b.id }}">删除</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+    {% endfor %}
+    </div>
+</body>
+</html>
